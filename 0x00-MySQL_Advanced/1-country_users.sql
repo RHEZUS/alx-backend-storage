@@ -1,9 +1,8 @@
--- creates a table users with the following columns:
--- id, name, email, country
-
+-- Creates a table with unique users.
+DROP TABLE IF EXISTS users;
 CREATE TABLE users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
-    country ENUM('US', 'Co', 'TN') NOT NULL DEFAULT 'US'
+    name VARCHAR(255),
+    country CHAR(2) NOT NULL DEFAULT 'US' CHECK (country IN ('US', 'CO', 'TN'))
 );

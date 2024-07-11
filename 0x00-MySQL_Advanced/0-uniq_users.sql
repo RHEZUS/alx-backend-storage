@@ -1,8 +1,7 @@
--- create a new table users
--- because Batch 3 is the best!
-
+-- Creates a table with unique users.
+DROP TABLE IF EXISTS users;
 CREATE TABLE users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
+    name VARCHAR(255)
 );
