@@ -13,12 +13,12 @@ def top_students(mongo_collection):
                     '_id': 1,
                     'name': 1,
                     'averageScore': {
-                        '$avg': {'$avg': '$topics.score',},
+                        '$avg': {'$avg': '$topics.score', },
                     },
                     'topics': 1,
                 },
             },
-            {'$sort': {'averageScore': -1},},
+            {'$sort': {'averageScore': -1}, },
         ]
     )
     return students
